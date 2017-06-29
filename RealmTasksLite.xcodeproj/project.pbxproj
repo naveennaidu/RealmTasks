@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A3275C01F04EC1A00A552BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3275BF1F04EC1A00A552BD /* AppDelegate.swift */; };
 		7A3275C21F04EC1A00A552BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3275C11F04EC1A00A552BD /* ViewController.swift */; };
-		7A3275C51F04EC1A00A552BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3275C31F04EC1A00A552BD /* Main.storyboard */; };
 		7A3275C71F04EC1A00A552BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A3275C61F04EC1A00A552BD /* Assets.xcassets */; };
 		7A3275CA1F04EC1A00A552BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3275C81F04EC1A00A552BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,10 +17,10 @@
 		7A3275BC1F04EC1A00A552BD /* RealmTasksLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasksLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3275BF1F04EC1A00A552BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A3275C11F04EC1A00A552BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7A3275C41F04EC1A00A552BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A3275C61F04EC1A00A552BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A3275C91F04EC1A00A552BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A3275CB1F04EC1A00A552BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A3275D11F04EE2A00A552BD /* RealmTasksLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealmTasksLite.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +53,9 @@
 		7A3275BE1F04EC1A00A552BD /* RealmTasksLite */ = {
 			isa = PBXGroup;
 			children = (
+				7A3275D11F04EE2A00A552BD /* RealmTasksLite.entitlements */,
 				7A3275BF1F04EC1A00A552BD /* AppDelegate.swift */,
 				7A3275C11F04EC1A00A552BD /* ViewController.swift */,
-				7A3275C31F04EC1A00A552BD /* Main.storyboard */,
 				7A3275C61F04EC1A00A552BD /* Assets.xcassets */,
 				7A3275C81F04EC1A00A552BD /* LaunchScreen.storyboard */,
 				7A3275CB1F04EC1A00A552BD /* Info.plist */,
@@ -96,8 +95,13 @@
 				TargetAttributes = {
 					7A3275BB1F04EC1A00A552BD = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = LR48R4SFC7;
+						DevelopmentTeam = 8N9GAED943;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,7 +130,6 @@
 			files = (
 				7A3275CA1F04EC1A00A552BD /* LaunchScreen.storyboard in Resources */,
 				7A3275C71F04EC1A00A552BD /* Assets.xcassets in Resources */,
-				7A3275C51F04EC1A00A552BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,14 +148,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7A3275C31F04EC1A00A552BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7A3275C41F04EC1A00A552BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7A3275C81F04EC1A00A552BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -263,12 +258,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LR48R4SFC7;
+				CODE_SIGN_ENTITLEMENTS = RealmTasksLite/RealmTasksLite.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8N9GAED943;
 				INFOPLIST_FILE = RealmTasksLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naveennaidu.RealmTasksLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -276,12 +275,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LR48R4SFC7;
+				CODE_SIGN_ENTITLEMENTS = RealmTasksLite/RealmTasksLite.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8N9GAED943;
 				INFOPLIST_FILE = RealmTasksLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naveennaidu.RealmTasksLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
